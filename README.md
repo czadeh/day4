@@ -5,6 +5,8 @@ I would advise you for your own self improvement to try to start from create-rea
 
 ## Starting from here
 
+Clone the repo then run `npm init` in the base folder to get the node modules set up.
+
 ### App.js
 
 #### The object
