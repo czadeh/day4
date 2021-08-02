@@ -1,23 +1,34 @@
-import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react'
+
+import Form from './components/Form'
+import TodoItem from './components/TodoItem'
 
 function App() {
+  const [todo, setTodo] = useState([
+    {
+      title: 'make to do list',
+      description: 'write the to do app for day 4 of Trace camp',
+      id: 1,
+      stillTodo: true
+    },
+    {
+      title: 'be amazing',
+      description: 'you got this one down free',
+      id: 2,
+      stillTodo: false
+    }
+  ])
+
+  const handleAdd = (title, description) => {
+    /* add code for adding an item to the list with the input title and description */
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* add a switch to toggle visibility on finished items */}
+      {/* add dynamic array transformations to components */}
+      <Form handleSubmit={handleAdd} />
     </div>
   );
 }
