@@ -1,12 +1,15 @@
+import './TodoItem.css';
+
 const TodoItem = ({ title, description, id, stillTodo, handleCheck, handleDelete }) => {
   return (
     <>
       {
-      <h2>
+      <div className='TodoList'>
         title: {title},
         description: {description},
-        id: {id}
-      </h2>
+        id: {id},
+        stillTodo: {stillTodo ? 'true' : 'false'}
+      </div>
       }
       {
       <div>
@@ -15,10 +18,7 @@ const TodoItem = ({ title, description, id, stillTodo, handleCheck, handleDelete
       }
       {
       <div>
-        <label>
-        <input type="checkbox" onChange={() => handleCheck(id)}></input>
-        Done
-        </label>
+        <button onClick={() => handleCheck(id)}>Toggle Finished</button>
       </div>
       }
     </>

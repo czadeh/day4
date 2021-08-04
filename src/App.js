@@ -52,37 +52,25 @@ function App() {
   }
 
   const showCheck = () => {
-    return(<h1>showDone</h1>)
-    /*
-    setshowDone(!showDone)
-    return(showDone ? 
-    <TodoItem{...todos} handleCheck={todoDone} handleDelete={todoDelete}></TodoItem> :
-    todos.filter((t) => t.stillTodo).map(t =>
-      <TodoItem{...t} handleCheck={todoDone} handleDelete={todoDelete}></TodoItem>))
-    */
+    setshowDone(!showDone) /*Starts as false, switches on button click.*/
   }
 
   return (
     <div className="App">
-
       <Form handleSubmit={handleAdd} />
       <h1>Todo List</h1>
+      {/*This is the switch controlled filter for finished items*/}
+      <button onClick={() => showCheck()}>Show Finished Items</button>
 
-      <label> {/*This is the switch controlled filter for finished items*/}
-          <input type="checkbox" onChange={() => showCheck()}></input>
-          {'Show Finished Items'}
-      </label>
-      
-      {/*
+      {/* This is the command that executes depending on the state for showing finished items
+          If true then it shows all todos, if false it only shows stillTodo true todos*/}
+      {showDone ? 
         todos.map(t =>
         <TodoItem{...t} handleCheck={todoDone} handleDelete={todoDelete}></TodoItem>)
-        */}      
-      {
-      todos.filter((t) => t.stillTodo).map(t =>
-        <TodoItem{...t} handleCheck={todoDone} handleDelete={todoDelete}></TodoItem>)
-      }
-      
-
+           : 
+          todos.filter((t) => t.stillTodo).map(t =>
+            <TodoItem{...t} handleCheck={todoDone} handleDelete={todoDelete}></TodoItem>)
+      }     
     </div>
   );
 }

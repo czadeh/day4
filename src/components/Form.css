@@ -11,15 +11,11 @@
   font-weight: bold;
 }
 
-.TitleLabel {}
-
 .TitleField {
   height: 20px;
   width: 50%;
   border-radius: 8px;
 }
-
-.DescriptionLabel {}
 
 .DescriptionField {
   height: 60px;
