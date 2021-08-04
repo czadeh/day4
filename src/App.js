@@ -37,7 +37,7 @@ function App() {
     const todo = todos.find((todo) => {
       return todo.id === id
     })
-    todo.stillTodo = checked /*checked starts as false and will set stillTodo to false when checked*/
+    todo.stillTodo = !todo.stillTodo /*switch stillTodo when checked*/
     setChecked(!checked) /*then the state changes*/
     setTodos(todos)
   }

@@ -1,4 +1,18 @@
 .TodoList{
     text-align: center;
-    font-size: 10px;
+    padding-top: 50px;
+    font-size: large;
+}
+
+.DeleteButton{
+    cursor: pointer;
+    color: red;
+    margin-left: 50px;
+}
+
+.ToggleButton{
+    cursor: pointer;
+    color: midnightblue;
+    background-color: lightgreen;
+    margin-left: 50px;
 }
