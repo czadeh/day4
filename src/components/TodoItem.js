@@ -1,9 +1,26 @@
-import './TodoItem.css'
-
-const TodoItem = ({ title, description, stillTodo, handleDelete }) => {
+const TodoItem = ({ title, description, id, stillTodo, handleCheck, handleDelete }) => {
   return (
     <>
-      {/* create the item here */}
+      {
+      <h2>
+        title: {title},
+        description: {description},
+        id: {id}
+      </h2>
+      }
+      {
+      <div>
+      <button onClick={() => handleDelete(id)}>Delete</button>
+      </div>
+      }
+      {
+      <div>
+        <label>
+        <input type="checkbox" onChange={() => handleCheck(id)}></input>
+        Done
+        </label>
+      </div>
+      }
     </>
   )
 }

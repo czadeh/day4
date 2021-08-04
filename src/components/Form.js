@@ -13,7 +13,7 @@ function Form(props) {
   }
 
   return (
-    <form className='Form'>
+    <form onSubmit={submit} className='Form'>
       <label className='Title'>Add Item:</label>
       <br />
       <label for='title' className='TitleLabel'>
